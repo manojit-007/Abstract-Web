@@ -402,51 +402,51 @@ body {
 }
 
 .feature-grid .feature-card:nth-child(1) {
-    background: #0a6ac4;
+    background: #800080;
 }
 
 .feature-grid .feature-card:nth-child(2) {
-    background: #FD5E53;
+    background: #0000FF;
 }
 
 .feature-grid .feature-card:nth-child(3) {
-    background: #DAA520;
+    background: #008000;
 }
 
 .feature-grid .feature-card:nth-child(4) {
-    background: #228B22;
+    background: #ff869a;
 }
 
 .feature-grid .feature-card:nth-child(5) {
-    background: #C8A2C8;
+    background: #FF6347 ;
 }
 
 .feature-grid .feature-card:nth-child(6) {
-    background: #0077B6;
+    background: #d17000 ;
 }
 
 .feature-grid .feature-card:nth-child(1) svg {
-    fill: #0a6ac4;
+    fill: #800080;
 }
 
 .feature-grid .feature-card:nth-child(2) svg {
-    fill: #FD5E53;
+    fill: #0000FF;
 }
 
 .feature-grid .feature-card:nth-child(3) svg {
-    fill: #DAA520;
+    fill: #008000;
 }
 
 .feature-grid .feature-card:nth-child(4) svg {
-    fill: #228B22;
+    fill: #ff869a;
 }
 
 .feature-grid .feature-card:nth-child(5) svg {
-    fill: #C8A2C8;
+    fill: #FF6347 ;
 }
 
 .feature-grid .feature-card:nth-child(6) svg {
-    fill: #0077B6;
+    fill: #d17000  ;
 }
 
 .feature-grid .feature-card:nth-child(n) {
@@ -471,14 +471,24 @@ body {
 
 
 /* --review section-- */
-
+.img-container{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+.img-container .img-container-text{
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--text-color);
+}
+.img-container,
 .review-container {
     background-color: var(--background-color);
     padding: 2rem;
     margin: 0 auto;
     max-width: 1280px;
+    height: fit-content;
 }
-
 .review-content {
     display: flex;
     flex-direction: column;
@@ -489,13 +499,14 @@ body {
     font-size: 1.875rem;
     font-weight: bold;
 }
-
+.img-grid,
 .review-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 2rem;
 }
 
+.img-card,
 .review-card {
     display: flex;
     flex-direction: column;
@@ -507,11 +518,22 @@ body {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.img-card{
+    height: 30vh;
+    padding: 0.5rem;
+    border-radius: 1rem;
+}
+.img-card img{
+    width: 100%;
+    border-radius: 0.7rem;
+    object-fit: cover;
+    overflow: hidden;
+}
+.img-card:hover ,
 .review-card:hover {
-    transform: scale(1.02);
-    ;
-    box-shadow: 0 4px 8px #0000001a;
-    border: 1px solid blue;
+    transform: scale(1.02);;
+    box-shadow: 0 4px 8px var(--gray);
+    border: 1px solid var(--dark-gray);
 }
 
 .review-avatar img {
@@ -537,4 +559,168 @@ body {
 }
 
 
+.update-container {
+    background-color: var(--background-color);
+    max-width: 1280px;
+    height: 40vh;
+    margin: 0 auto;
+    min-height: 300px;
+}
 
+.update-content {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--light-gray);
+    height: 100%;
+    border-radius: 0.5rem;
+    overflow: hidden;
+}
+
+.left-update-section {
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: none;
+    animation: slide 1.25s ease forwards;
+}
+
+.left-update-section img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 0.5rem;
+}
+
+.right-update-section {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    width: 98%;
+    padding: 0.5rem;
+    animation: slide2 1.25s ease forwards;
+}
+
+@media screen and (min-width:640px) {
+    .left-update-section {
+        display: block;
+        width: 50%;
+    }
+
+    .right-update-section {
+        width: 50%;
+    }
+
+    .update-container {
+        padding: 2rem;
+    }
+}
+
+.update-info {
+    padding: 0 3rem;
+}
+
+.update-info h2 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent-color);
+    text-align: left;
+}
+
+.update-info p {
+    text-align: left;
+    color: var(--gray);
+}
+
+.right-update-section form {
+    padding: 0 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+    margin-bottom: 1rem;
+}
+
+.right-update-section form input {
+    background: var(--background-color);
+    color: var(--dark-gray);
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+}
+
+.right-update-section form input:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.right-update-section form button {
+    background: var(--primary-color);
+    color: var(--background-color);
+    padding: 0.5rem 1rem;
+    border-radius: 0.2rem;
+}
+
+.right-update-section form button:hover {
+    background-color: var(--accent-color);
+}
+
+.right-update-section .policy {
+    font-size: 0.75rem;
+    display: flex;
+    flex-wrap: wrap;
+    text-align: left;
+    padding: 0 3rem;
+    color: var(--gray);
+}
+
+.right-update-section .policy a {
+    margin-left: 0.2rem;
+    margin-right: 0.2rem;
+    color: var(--accent-color);
+    text-decoration: underline;
+}
+
+@media screen and (max-width:640px) {
+    .update-info h2 {
+        font-size: 2.5rem;
+    }
+}
+
+/* footer */
+
+footer{
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 1280px;
+}
+
+.footer-top{
+    padding: 2rem;
+}
+/* <div class="footer-end">
+            Copyright <span> &#169;</span> 2024 & design by mono 
+        </div> */
+.footer-end{
+    padding-bottom: 2rem;
+    color: var(--text-color);
+}
+.footer-end span{
+    color: var(--link-color);
+    text-transform: capitalize;
+}
+/* /**---** */
+.sci{
+    display: flex;
+}
+.sci svg{
+    width: 2.5rem;
+    height: 2.5rem;
+}
